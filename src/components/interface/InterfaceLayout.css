@@ -1,0 +1,108 @@
+﻿/* Wrapper for the entire application */
+.App {
+    height: 100vh;
+}
+
+/* Header to align panels side by side */
+.App-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure the parent `LeftPanel` takes up the full height and width */
+.LeftPanel {
+    display: flex;
+    flex-grow: 1; /* Let canvases scale freely in this panel */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+
+/* Ensure each canvas container fills its parent flex space */
+.CanvasContainer {
+    flex: 1;
+    position: relative;
+    height: 100%; /* Ensure full height occupied */
+    width: 100%;
+    margin: 0; /* Remove unwanted spacing */
+    overflow: hidden;
+    padding: 0; /* Remove padding that would affect the canvas size */
+    box-sizing: border-box; /* Include padding/borders in size calculations */
+}
+
+.CanvasContainer canvas {
+    width: 100%; /* Match container width */
+    height: 100%; /* Match container height */
+    display: block; /* Avoid inline spacing issues with canvas */
+    position: absolute;
+}
+
+/* Right Panel wrapper with fixed width */
+.RightPanel {
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Optional background */
+}
+
+/* Button container inside the right panel */
+.ButtonContainer {
+    width: 100%; /* Constraints the size of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Parent container styles */
+.ControlPanel {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: space-around; /* Distribute buttons evenly */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 5%; /* Add a margin around the panel */
+}
+
+/* Button styles */
+.ControlPanel button {
+    width: 90%; /* Button occupies 90% of the container width (5% margin on each side) */
+    height: 50px; /* Fixed height for uniform size */
+    margin: 5% 0; /* 5% vertical margin between buttons */
+    font-size: 16px; /* Ensures readable text */
+    padding: 10px; /* Padding to make the button look better */
+    border: 3px solid black; /* Add a border for a clear edge */
+    border-radius: 3px; /* Optional: rounded corners */
+    background-color: #ffffff; /* Example background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-weight: bold; /*add bold text*/
+    text-align: center; /* Center text */
+    vertical-align: top; /* Center text vertically */
+    /* Add shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight blur and spread */
+    transition: box-shadow 0.2s ease-in-out; /* Smooth shadow transition */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Styles for the number input field */
+.numberInput {
+    width: 90%; /* Matches the width of the buttons */
+    height: 50px; /* Consistent height with buttons */
+    margin: 5% 0; /* Matches the vertical margin of the buttons */
+    font-size: 16px; /* Optional - ensure text is readable */
+    padding: 10px;
+    border: 1px solid gray; /* Basic border for clarity */
+    border-radius: 5px; /* Optional - add rounded corners */
+    box-sizing: border-box; /* Prevent input from overflowing */
+    text-align: right; /* Center the text */
+}
+
+.numberInput.invalid {
+    border: 2px solid red;
+    outline: none;
+}

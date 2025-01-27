@@ -1,0 +1,7 @@
+﻿{
+    "rightPanelFixedWidth":150,
+    "MAX_CANVASES": 4,
+    "DEFAULT_DURATION": 5,
+    "BG_COLOR": "#000000",
+    "MAX_SIZE_SHAPE": 0.1
+}
